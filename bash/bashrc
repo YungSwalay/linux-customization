@@ -68,7 +68,7 @@ retval() {
 	echo $?
 }
 export PS1="\[\e[31m\][\$(retval)]\[\e[32m\]\u@\h \[\e[36m\]\W\[\e[m\]$ "
-export PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname -s) $(pwd|xargs basename)\a"'
+export PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname -s)  $(pwd|xargs basename)\a"'
 
 if bash_which nvim; then
 	alias vim="nvim"
@@ -97,3 +97,6 @@ fi
 PATH+="${GOBIN+:$GOBIN}"
 PATH+=":/usr/local/bin"
 PATH+=":/snap/bin"
+
+if [ -d 
+export PV_PROJECT_DIR="${HOME}/Projects"
