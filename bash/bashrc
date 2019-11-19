@@ -88,10 +88,12 @@ if [ -e "/home/chorowitz/Games/Legend of Zelda, The - The Minish Cap (U).zip" ];
 	alias zeldamc="/usr/games/mednafen \"/home/chorowitz/Games/Legend of Zelda, The - The Minish Cap (U).zip\""
 fi
 
-export GOPATH="${HOME}/go"
-export GOBIN="${GOPATH}/bin"
+if which go; then
+	export GOPATH="${HOME}/go"
+	export GOBIN="${GOPATH}/bin"
+fi
 
 [[ $PATH == *: ]] && PATH="${PATH::-1}"
-PATH+=":${GOBIN}"
+PATH+="${GOBIN+:$GOBIN}"
 PATH+=":/usr/local/bin"
 PATH+=":/snap/bin"
