@@ -93,7 +93,7 @@ if which go; then
 	export GOBIN="${GOPATH}/bin"
 fi
 
-[[ $PATH == *: ]] && PATH="${PATH::-1}"
+[[ $PATH == *: ]] && PATH="${PATH:: -1}"
 PATH+="${GOBIN+:$GOBIN}"
 PATH+=":/usr/local/bin"
 PATH+=":/snap/bin"

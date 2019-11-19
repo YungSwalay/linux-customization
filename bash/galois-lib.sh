@@ -69,6 +69,38 @@ is_valid_name() {
 	fi
 }
 
+path_join() {
+	# Usage: path_join ["pathname" ...]
+	local args=($@)
+	while [[ ${1: -1} == / ]]
+	do
+		set -- "${1:: -1}"
+	done
+	ret="${1}"
+
+	for elem in "${@:2:(($#-2))}"
+	do
+		while [[ ${elem: -1} == / ]]
+		do
+			elem="${elem:: -1}"
+		done
+		while [[ ${elem:: 1} == / ]]
+		do
+			elem="${elem: 1}"
+		done
+		ret+="/${elem}"
+	done
+
+	larg="${args[${#args[@]}-1]}"
+	while [[ ${larg:: 1} == / ]]
+	do
+		larg="${larg: 1}"
+	done
+	ret+="/${larg}"
+
+	printf '%s\n' "${ret}"
+}
+
 ip_to_decimal() {
 	# Usage: ip_to_decimal "ip"
 	# Source: [2]
