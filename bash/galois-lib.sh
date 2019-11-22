@@ -101,6 +101,25 @@ path_join() {
 	printf '%s\n' "${ret}"
 }
 
+forget_host() {
+	# Usage: forget_host "host_pattern"
+	local f="${HOME}/.ssh/known_hosts" out=
+	if ! [ -e "${f}" ]; then
+		echo "${f} does not exist" 1>&2
+		return 1
+	fi
+
+	while read -r line
+	do
+		if [ ${#line} -gt 0 ] && ! [[ $line =~ $1 ]]; then
+			out+="${line}\n"
+		fi
+	done < "${f}"
+	[[ $out == *\n ]] && out="${out:: -2}"
+	echo -e "${out}" > "${f}"
+	return $?
+}
+
 ip_to_decimal() {
 	# Usage: ip_to_decimal "ip"
 	# Source: [2]
