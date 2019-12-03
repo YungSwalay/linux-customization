@@ -196,6 +196,15 @@
 	<transition>
 		<duration>5.0</duration>
 		<from>/home/chorowitz/wallpapers/wallhaven-476djo.jpg</from>
+		<to>/home/chorowitz/wallpapers/wallhaven-39gogv.jpg</to>
+	</transition>
+	<static>
+		<duration>255.0</duration>
+		<file>/home/chorowitz/wallpapers/wallhaven-39gogv.jpg</file>
+	</static>
+	<transition>
+		<duration>5.0</duration>
+		<from>/home/chorowitz/wallpapers/wallhaven-39gogv.jpg</from>
 		<to>/home/chorowitz/wallpapers/wallhaven-8396gk.jpg</to>
 	</transition>
 </background>

@@ -5,6 +5,7 @@ Plug 'WolfgangMehner/bash-support'
 Plug 'vim-airline/vim-airline'    
 Plug 'vim-airline/vim-airline-themes'    
 Plug 'tpope/vim-fugitive'    
+Plug 'tpope/vim-fireplace'    
 Plug 'dracula/vim', { 'as': 'dracula' }    
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }    
 call plug#end()    
