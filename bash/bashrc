@@ -98,5 +98,6 @@ PATH+="${GOBIN+:$GOBIN}"
 PATH+=":/usr/local/bin"
 PATH+=":/snap/bin"
 
-if [ -d 
-export PV_PROJECT_DIR="${HOME}/Projects"
+if [ -d "${HOME}/Projects" ]; then
+	export PV_PROJECT_DIR="${HOME}/Projects"
+fi
