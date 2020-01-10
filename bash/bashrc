@@ -64,6 +64,11 @@ uninstall_neovim() {
 	sudo find / -name nvim -type d -not -path "/home/*" -not -path "/root/*" -exec rm -rf {} \;
 }
 
+:q() {
+	echo "You are not in vim jackass" 2>&1
+	return 1
+}
+
 retval() {
 	echo $?
 }
